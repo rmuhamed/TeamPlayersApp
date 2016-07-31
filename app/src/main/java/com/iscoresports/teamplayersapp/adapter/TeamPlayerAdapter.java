@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import com.iscoresports.teamplayersapp.R;
 import com.iscoresports.teamplayersapp.activity.TeamPlayersActivity;
 import com.iscoresports.teamplayersapp.adapter.viewholder.TeamPlayerHolder;
-import com.iscoresports.teamplayersapp.model.Team;
+import com.iscoresports.teamplayersapp.model.Player;
 
 import java.util.List;
 
@@ -16,9 +16,9 @@ import java.util.List;
  * Created by rmuhamed on domingo.
  */
 public class TeamPlayerAdapter extends RecyclerView.Adapter<TeamPlayerHolder> {
-    private final List<Team> items;
+    private List<Player> items;
 
-    public TeamPlayerAdapter(TeamPlayersActivity teamPlayersActivity, List<Team> players) {
+    public TeamPlayerAdapter(TeamPlayersActivity teamPlayersActivity, List<Player> players) {
         this.items = players;
     }
 
@@ -32,7 +32,7 @@ public class TeamPlayerAdapter extends RecyclerView.Adapter<TeamPlayerHolder> {
 
     @Override
     public void onBindViewHolder(TeamPlayerHolder holder, int position) {
-        holder.playerNameTv.setText(this.items.get(position).getName());
+        holder.playerNameTv.setText(this.items.get(position).getJerseyNumber());
 
         //animate(holder);
     }
@@ -45,5 +45,10 @@ public class TeamPlayerAdapter extends RecyclerView.Adapter<TeamPlayerHolder> {
         }
 
         return itemCount;
+    }
+
+    public void setItems(List<Player> players) {
+        this.items = players;
+        this.notifyDataSetChanged();
     }
 }

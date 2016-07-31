@@ -11,12 +11,14 @@ import com.iscoresports.teamplayersapp.R;
 import com.iscoresports.teamplayersapp.adapter.TeamPlayerAdapter;
 import com.iscoresports.teamplayersapp.api.APIResultListener;
 import com.iscoresports.teamplayersapp.api.RestAPIImpl;
+import com.iscoresports.teamplayersapp.model.Player;
 import com.iscoresports.teamplayersapp.model.Team;
 
 import java.util.ArrayList;
 
 public class TeamPlayersActivity extends MyAppBaseActivity {
     public static final int SPAN_COUNT = 3;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,10 +29,10 @@ public class TeamPlayersActivity extends MyAppBaseActivity {
 
     @Override
     protected void setupLayout() {
-        RecyclerView recyclerView = (RecyclerView) this.findViewById(R.id.team_player_recycler);
+        recyclerView = (RecyclerView) this.findViewById(R.id.team_player_recycler);
         recyclerView.setLayoutManager(new GridLayoutManager(this, SPAN_COUNT));
 
-        recyclerView.setAdapter(new TeamPlayerAdapter(this, new ArrayList<Team>()));
+        this.recyclerView.setAdapter(new TeamPlayerAdapter(this, new ArrayList<Player>()));
 
         RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
         itemAnimator.setAddDuration(1000);
@@ -48,6 +50,8 @@ public class TeamPlayersActivity extends MyAppBaseActivity {
             @Override
             public void onSuccess(Team result) {
                 Toast.makeText(TeamPlayersActivity.this, result.getName(), Toast.LENGTH_SHORT).show();
+
+                ((TeamPlayerAdapter)recyclerView.getAdapter()).setItems(result.getPlayers());
             }
 
             @Override

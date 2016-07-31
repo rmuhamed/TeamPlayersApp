@@ -10,3 +10,6 @@
 .idea/modules.xml
 .idea/workspace.xml
 TeamPlayersApp.iml
+/.idea/runConfigurations.xml
+/.idea/vcs.xml
+/.idea/libraries/
