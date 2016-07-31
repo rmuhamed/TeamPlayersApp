@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TeamPlayersApp</string>
+    <string name="dummy_team_player_name">Team player name</string>
 </resources>

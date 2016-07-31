@@ -14,7 +14,11 @@ public abstract class MyAppBaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         this.setContentView(this.getLayoutResourceId());
+
+        this.setupLayout();
     }
+
+    protected abstract void setupLayout();
 
     protected abstract int getLayoutResourceId();
 }
