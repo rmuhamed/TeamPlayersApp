@@ -2,6 +2,7 @@ package com.iscoresports.teamplayersapp.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
@@ -28,7 +29,13 @@ public class TeamPlayersActivity extends MyAppBaseActivity {
     protected void setupLayout() {
         RecyclerView recyclerView = (RecyclerView) this.findViewById(R.id.team_player_recycler);
         recyclerView.setLayoutManager(new GridLayoutManager(this, SPAN_COUNT));
+
         recyclerView.setAdapter(new TeamPlayerAdapter(this, new ArrayList<Team>()));
+
+        RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
+        itemAnimator.setAddDuration(1000);
+        itemAnimator.setRemoveDuration(1000);
+        recyclerView.setItemAnimator(itemAnimator);
     }
 
     @Override
