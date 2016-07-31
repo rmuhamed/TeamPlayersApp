@@ -1,10 +1,12 @@
 package com.iscoresports.teamplayersapp.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.iscoresports.teamplayersapp.R;
 import com.iscoresports.teamplayersapp.activity.TeamPlayersActivity;
 import com.iscoresports.teamplayersapp.adapter.viewholder.TeamPlayerHolder;
@@ -16,10 +18,12 @@ import java.util.List;
  * Created by rmuhamed on domingo.
  */
 public class TeamPlayerAdapter extends RecyclerView.Adapter<TeamPlayerHolder> {
+    private final Context context;
     private List<Player> items;
 
-    public TeamPlayerAdapter(TeamPlayersActivity teamPlayersActivity, List<Player> players) {
+    public TeamPlayerAdapter(Context context, List<Player> players) {
         this.items = players;
+        this.context = context;
     }
 
     @Override
@@ -34,7 +38,7 @@ public class TeamPlayerAdapter extends RecyclerView.Adapter<TeamPlayerHolder> {
     public void onBindViewHolder(TeamPlayerHolder holder, int position) {
         holder.playerNameTv.setText(this.items.get(position).getJerseyNumber());
 
-        //animate(holder);
+        Glide.with(this.context).load("http://goo.gl/gEgYUd").into(holder.playerPictureIv);
     }
 
     @Override

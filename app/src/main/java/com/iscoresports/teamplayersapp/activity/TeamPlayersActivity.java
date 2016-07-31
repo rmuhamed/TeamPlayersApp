@@ -17,7 +17,7 @@ import com.iscoresports.teamplayersapp.model.Team;
 import java.util.ArrayList;
 
 public class TeamPlayersActivity extends MyAppBaseActivity {
-    public static final int SPAN_COUNT = 3;
+    public static final int SPAN_COUNT = 2;
     private RecyclerView recyclerView;
 
     @Override
@@ -29,15 +29,15 @@ public class TeamPlayersActivity extends MyAppBaseActivity {
 
     @Override
     protected void setupLayout() {
-        recyclerView = (RecyclerView) this.findViewById(R.id.team_player_recycler);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, SPAN_COUNT));
+        this.recyclerView = (RecyclerView) this.findViewById(R.id.team_player_recycler);
+        this.recyclerView.setLayoutManager(new GridLayoutManager(this, SPAN_COUNT));
 
         this.recyclerView.setAdapter(new TeamPlayerAdapter(this, new ArrayList<Player>()));
 
         RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
         itemAnimator.setAddDuration(1000);
         itemAnimator.setRemoveDuration(1000);
-        recyclerView.setItemAnimator(itemAnimator);
+        this.recyclerView.setItemAnimator(itemAnimator);
     }
 
     @Override
