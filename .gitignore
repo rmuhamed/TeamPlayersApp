@@ -4,12 +4,13 @@
 .idea/.name
 .idea/compiler.xml
 .idea/copyright/
+.idea/libraries/
 .idea/encodings.xml
 .idea/gradle.xml
 .idea/misc.xml
 .idea/modules.xml
 .idea/workspace.xml
+.idea/runConfigurations.xml
+.idea/vcs.xml
 TeamPlayersApp.iml
-/.idea/runConfigurations.xml
-/.idea/vcs.xml
-/.idea/libraries/
+/app/app.iml
