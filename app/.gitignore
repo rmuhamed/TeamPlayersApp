@@ -1,1 +1,18 @@
 /build
+# Created by .ignore support plugin (hsz.mobi)
+/local.properties
+.gitignore
+.idea/.name
+.idea/compiler.xml
+.idea/copyright/
+.idea/libraries/
+.idea/encodings.xml
+.idea/gradle.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/runConfigurations.xml
+.idea/vcs.xml
+TeamPlayersApp.iml
+/app/app.iml
+

@@ -36,9 +36,15 @@ public class TeamPlayerAdapter extends RecyclerView.Adapter<TeamPlayerHolder> {
 
     @Override
     public void onBindViewHolder(TeamPlayerHolder holder, int position) {
-        holder.playerNameTv.setText(this.items.get(position).getJerseyNumber());
+        Player somePlayer = this.items.get(position);
 
-        Glide.with(this.context).load("http://goo.gl/gEgYUd").into(holder.playerPictureIv);
+        holder.playerNameTv.setText(somePlayer.getJerseyNumber());
+
+        Glide.with(this.context)
+                .load(somePlayer.getPerson().getImageUrl())
+                .asBitmap()
+                .centerCrop()
+                .into(holder.playerPictureIv);
     }
 
     @Override

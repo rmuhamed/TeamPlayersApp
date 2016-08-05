@@ -23,12 +23,10 @@ public class Player {
     @SerializedName("JerseyNumber")
     @Expose
     private String jerseyNumber;
-    @SerializedName("Team")
+
     @Expose
-    private Object team;
-    @SerializedName("SourceTeamName")
-    @Expose
-    private Object sourceTeamName;
+    @SerializedName("Person")
+    private Person person;
 
     /**
      * 
@@ -121,39 +119,21 @@ public class Player {
     }
 
     /**
-     * 
+     *
      * @return
-     *     The team
+     *     The person
      */
-    public Object getTeam() {
-        return team;
+    public Person getPerson() {
+        return person;
     }
 
     /**
-     * 
-     * @param team
-     *     The Team
+     *
+     * @param person
+     *     The Person
      */
-    public void setTeam(Object team) {
-        this.team = team;
-    }
-
-    /**
-     * 
-     * @return
-     *     The sourceTeamName
-     */
-    public Object getSourceTeamName() {
-        return sourceTeamName;
-    }
-
-    /**
-     * 
-     * @param sourceTeamName
-     *     The SourceTeamName
-     */
-    public void setSourceTeamName(Object sourceTeamName) {
-        this.sourceTeamName = sourceTeamName;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
 }
