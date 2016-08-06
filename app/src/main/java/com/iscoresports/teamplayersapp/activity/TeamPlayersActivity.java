@@ -31,8 +31,7 @@ public class TeamPlayersActivity extends MyAppBaseActivity {
     protected void setupLayout() {
         this.recyclerView = (RecyclerView) this.findViewById(R.id.team_player_recycler);
         this.recyclerView.setLayoutManager(new GridLayoutManager(this, SPAN_COUNT));
-
-        this.recyclerView.setAdapter(new TeamPlayerAdapter(this, new ArrayList<Player>()));
+        this.recyclerView.setAdapter(new TeamPlayerAdapter(new ArrayList<Player>()));
 
         RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
         itemAnimator.setAddDuration(1000);

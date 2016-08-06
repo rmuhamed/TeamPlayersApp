@@ -7,6 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Generated("org.jsonschema2pojo")
 public class Person {
@@ -303,5 +304,12 @@ public class Person {
      */
     public void setAdults(List<Adult> adults) {
         this.adults = adults;
+    }
+
+    @Override
+    public String toString() {
+        String fullName = String.format(Locale.getDefault(), "%s %s", this.firstName, this.lastName);
+
+        return fullName;
     }
 }
