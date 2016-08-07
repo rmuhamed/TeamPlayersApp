@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.iscoresports.teamplayersapp.R;
+import com.iscoresports.teamplayersapp.adapter.OnPlayerSelected;
 import com.iscoresports.teamplayersapp.adapter.TeamPlayerAdapter;
 import com.iscoresports.teamplayersapp.api.APIResultListener;
 import com.iscoresports.teamplayersapp.api.RestAPIImpl;
@@ -16,7 +17,8 @@ import com.iscoresports.teamplayersapp.model.Team;
 
 import java.util.ArrayList;
 
-public class TeamPlayersActivity extends MyAppBaseActivity {
+
+public class TeamPlayersActivity extends MyAppBaseActivity implements OnPlayerSelected {
     public static final int SPAN_COUNT = 2;
     private RecyclerView recyclerView;
 
@@ -31,7 +33,7 @@ public class TeamPlayersActivity extends MyAppBaseActivity {
     protected void setupLayout() {
         this.recyclerView = (RecyclerView) this.findViewById(R.id.team_player_recycler);
         this.recyclerView.setLayoutManager(new GridLayoutManager(this, SPAN_COUNT));
-        this.recyclerView.setAdapter(new TeamPlayerAdapter(new ArrayList<Player>()));
+        this.recyclerView.setAdapter(new TeamPlayerAdapter(this));
 
         RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
         itemAnimator.setAddDuration(1000);
@@ -60,5 +62,10 @@ public class TeamPlayersActivity extends MyAppBaseActivity {
         });
 
         restImpl.getTeam();
+    }
+
+    @Override
+    public void onSomePlayerClicked(Player aPlayer) {
+        //TODO: RM - Make request
     }
 }
