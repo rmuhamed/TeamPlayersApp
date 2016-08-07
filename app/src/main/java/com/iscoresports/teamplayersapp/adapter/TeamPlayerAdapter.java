@@ -43,10 +43,12 @@ public class TeamPlayerAdapter extends RecyclerView.Adapter<TeamPlayerHolder> im
         Player somePlayer = this.items.get(position);
 
         holder.playerNameTv.setText(somePlayer.getPerson().toString());
+        holder.playerJerseyNumberTv.setText(somePlayer.getJerseyNumber());
 
-        RemoteImageView remoteImageView = new SimpleRemoteImageBuilder(holder.playerPictureIv, somePlayer.getPerson().getImageUrl()).build();
-    remoteImageView.load();
-}
+        RemoteImageView remoteImageView =
+                new SimpleRemoteImageBuilder(holder.playerPictureIv, somePlayer.getPerson().getImageUrl()).build();
+        remoteImageView.load();
+    }
 
     @Override
     public int getItemCount() {

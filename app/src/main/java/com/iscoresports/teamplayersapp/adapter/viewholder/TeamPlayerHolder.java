@@ -14,11 +14,13 @@ public class TeamPlayerHolder extends RecyclerView.ViewHolder implements View.On
     private final OnAdapterItemClick itemClickListener;
     public ImageView playerPictureIv;
     public TextView playerNameTv;
+    public TextView playerJerseyNumberTv;
 
     public TeamPlayerHolder(View itemView, OnAdapterItemClick itemClickListener) {
         super(itemView);
 
         this.playerNameTv = (TextView) itemView.findViewById(R.id.team_player_item_name);
+        this.playerJerseyNumberTv = (TextView) itemView.findViewById(R.id.team_player_item_jersey_number);
         this.playerPictureIv = (ImageView) itemView.findViewById(R.id.team_player_item_picture);
 
         this.itemClickListener = itemClickListener;
