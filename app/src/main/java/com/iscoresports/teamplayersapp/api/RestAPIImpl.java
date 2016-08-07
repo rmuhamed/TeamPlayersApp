@@ -32,9 +32,9 @@ public class RestAPIImpl implements Callback<Team> {
         int statusCode = response.code();
         if (statusCode == Constants.HTTP_OK) {
            this.listener.onSuccess(response.body());
+        } else {
+            this.listener.onError();
         }
-
-        this.listener.onError();
     }
 
     @Override

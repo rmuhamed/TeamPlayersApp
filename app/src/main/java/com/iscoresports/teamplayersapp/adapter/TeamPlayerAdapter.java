@@ -1,15 +1,16 @@
 package com.iscoresports.teamplayersapp.adapter;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bumptech.glide.Glide;
 import com.iscoresports.teamplayersapp.R;
 import com.iscoresports.teamplayersapp.adapter.viewholder.TeamPlayerHolder;
 import com.iscoresports.teamplayersapp.model.Player;
+import com.iscoresports.teamplayersapp.widget.remoteimage.RemoteImageView;
+import com.iscoresports.teamplayersapp.widget.remoteimage.RemoteImageViewBuilder;
+import com.iscoresports.teamplayersapp.widget.remoteimage.SimpleRemoteImageBuilder;
 
 import java.util.List;
 
@@ -36,11 +37,8 @@ public class TeamPlayerAdapter extends RecyclerView.Adapter<TeamPlayerHolder> {
 
         holder.playerNameTv.setText(somePlayer.getPerson().toString());
 
-        Glide.with(holder.playerPictureIv.getContext())
-                .load(somePlayer.getPerson().getImageUrl())
-                .asBitmap()
-                .centerCrop()
-                .into(holder.playerPictureIv);
+        RemoteImageView remoteImageView = new SimpleRemoteImageBuilder(holder.playerPictureIv, somePlayer.getPerson().getImageUrl()).build();
+        remoteImageView.load();
     }
 
     @Override
