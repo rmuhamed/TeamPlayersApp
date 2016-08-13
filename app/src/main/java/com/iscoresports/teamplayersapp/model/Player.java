@@ -6,11 +6,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 @Generated("org.jsonschema2pojo")
-public class Player {
-
-    @SerializedName("Id")
-    @Expose
-    private Integer id;
+public class Player extends ModelObject {
     @SerializedName("PersonId")
     @Expose
     private Integer personId;
@@ -27,25 +23,6 @@ public class Player {
     @Expose
     @SerializedName("Person")
     private Person person;
-
-    /**
-     * 
-     * @return
-     *     The id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * 
-     * @param id
-     *     The Id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     /**
      * 
      * @return

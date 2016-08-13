@@ -8,35 +8,10 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 @Generated("org.jsonschema2pojo")
-public class Team {
-
-    @SerializedName("Id")
-    @Expose
-    private Integer id;
+public class Team extends ModelObject {
     @SerializedName("Name")
     @Expose
     private String name;
-    @SerializedName("WebsiteURI")
-    @Expose
-    private String websiteURI;
-    @SerializedName("DivisionId")
-    @Expose
-    private Integer divisionId;
-    @SerializedName("DivisionName")
-    @Expose
-    private String divisionName;
-    @SerializedName("SessionId")
-    @Expose
-    private Integer sessionId;
-    @SerializedName("SessionName")
-    @Expose
-    private String sessionName;
-    @SerializedName("SessionBegins")
-    @Expose
-    private String sessionBegins;
-    @SerializedName("SessionEnds")
-    @Expose
-    private String sessionEnds;
     @SerializedName("LeagueName")
     @Expose
     private String leagueName;
@@ -46,9 +21,6 @@ public class Team {
     @SerializedName("State")
     @Expose
     private String state;
-    @SerializedName("Zip")
-    @Expose
-    private String zip;
     @SerializedName("IsAllStar")
     @Expose
     private Boolean isAllStar;
@@ -64,30 +36,6 @@ public class Team {
     @SerializedName("Players")
     @Expose
     private List<Player> players = new ArrayList<Player>();
-    @SerializedName("StatusTimestamp")
-    @Expose
-    private String statusTimestamp;
-    @SerializedName("Settings")
-    @Expose
-    private Settings settings;
-
-    /**
-     * 
-     * @return
-     *     The id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * 
-     * @param id
-     *     The Id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     /**
      * 
@@ -107,133 +55,7 @@ public class Team {
         this.name = name;
     }
 
-    /**
-     * 
-     * @return
-     *     The websiteURI
-     */
-    public String getWebsiteURI() {
-        return websiteURI;
-    }
-
-    /**
-     * 
-     * @param websiteURI
-     *     The WebsiteURI
-     */
-    public void setWebsiteURI(String websiteURI) {
-        this.websiteURI = websiteURI;
-    }
-
-    /**
-     * 
-     * @return
-     *     The divisionId
-     */
-    public Integer getDivisionId() {
-        return divisionId;
-    }
-
-    /**
-     * 
-     * @param divisionId
-     *     The DivisionId
-     */
-    public void setDivisionId(Integer divisionId) {
-        this.divisionId = divisionId;
-    }
-
-    /**
-     * 
-     * @return
-     *     The divisionName
-     */
-    public String getDivisionName() {
-        return divisionName;
-    }
-
-    /**
-     * 
-     * @param divisionName
-     *     The DivisionName
-     */
-    public void setDivisionName(String divisionName) {
-        this.divisionName = divisionName;
-    }
-
-    /**
-     * 
-     * @return
-     *     The sessionId
-     */
-    public Integer getSessionId() {
-        return sessionId;
-    }
-
-    /**
-     * 
-     * @param sessionId
-     *     The SessionId
-     */
-    public void setSessionId(Integer sessionId) {
-        this.sessionId = sessionId;
-    }
-
-    /**
-     * 
-     * @return
-     *     The sessionName
-     */
-    public String getSessionName() {
-        return sessionName;
-    }
-
-    /**
-     * 
-     * @param sessionName
-     *     The SessionName
-     */
-    public void setSessionName(String sessionName) {
-        this.sessionName = sessionName;
-    }
-
-    /**
-     * 
-     * @return
-     *     The sessionBegins
-     */
-    public String getSessionBegins() {
-        return sessionBegins;
-    }
-
-    /**
-     * 
-     * @param sessionBegins
-     *     The SessionBegins
-     */
-    public void setSessionBegins(String sessionBegins) {
-        this.sessionBegins = sessionBegins;
-    }
-
-    /**
-     * 
-     * @return
-     *     The sessionEnds
-     */
-    public String getSessionEnds() {
-        return sessionEnds;
-    }
-
-    /**
-     * 
-     * @param sessionEnds
-     *     The SessionEnds
-     */
-    public void setSessionEnds(String sessionEnds) {
-        this.sessionEnds = sessionEnds;
-    }
-
-    /**
+   /**
      * 
      * @return
      *     The leagueName
@@ -285,24 +107,6 @@ public class Team {
      */
     public void setState(String state) {
         this.state = state;
-    }
-
-    /**
-     * 
-     * @return
-     *     The zip
-     */
-    public String getZip() {
-        return zip;
-    }
-
-    /**
-     * 
-     * @param zip
-     *     The Zip
-     */
-    public void setZip(String zip) {
-        this.zip = zip;
     }
 
     /**
@@ -393,41 +197,5 @@ public class Team {
      */
     public void setPlayers(List<Player> players) {
         this.players = players;
-    }
-
-    /**
-     * 
-     * @return
-     *     The statusTimestamp
-     */
-    public String getStatusTimestamp() {
-        return statusTimestamp;
-    }
-
-    /**
-     * 
-     * @param statusTimestamp
-     *     The StatusTimestamp
-     */
-    public void setStatusTimestamp(String statusTimestamp) {
-        this.statusTimestamp = statusTimestamp;
-    }
-
-    /**
-     * 
-     * @return
-     *     The settings
-     */
-    public Settings getSettings() {
-        return settings;
-    }
-
-    /**
-     * 
-     * @param settings
-     *     The Settings
-     */
-    public void setSettings(Settings settings) {
-        this.settings = settings;
     }
 }

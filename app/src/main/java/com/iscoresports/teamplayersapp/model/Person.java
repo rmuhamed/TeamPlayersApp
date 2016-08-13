@@ -10,10 +10,7 @@ import java.util.List;
 import java.util.Locale;
 
 @Generated("org.jsonschema2pojo")
-public class Person {
-    @SerializedName("Id")
-    @Expose
-    private Integer id;
+public class Person extends ModelObject {
     @SerializedName("AccountId")
     @Expose
     private Integer accountId;
@@ -53,25 +50,6 @@ public class Person {
     @SerializedName("Adults")
     @Expose
     private List<Adult> adults = new ArrayList<Adult>();
-
-    /**
-     *
-     * @return
-     *     The id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     *
-     * @param id
-     *     The Id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     /**
      *
      * @return

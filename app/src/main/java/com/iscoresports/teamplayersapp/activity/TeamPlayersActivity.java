@@ -66,6 +66,8 @@ public class TeamPlayersActivity extends MyAppBaseActivity implements OnPlayerSe
 
     @Override
     public void onSomePlayerClicked(Player aPlayer) {
-        //TODO: RM - Make request
+        RestAPIImpl restImpl = new RestAPIImpl(null);
+
+        //restImpl.getPlayerInformation(1 , aPlayer.getId(), aPlayer.getPerson().getFirstName(), aPlayer.getPerson().getLastName());
     }
 }

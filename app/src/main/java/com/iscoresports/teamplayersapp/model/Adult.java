@@ -8,11 +8,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 @Generated("org.jsonschema2pojo")
-public class Adult {
-
-    @SerializedName("Id")
-    @Expose
-    private Integer id;
+public class Adult extends ModelObject {
     @SerializedName("AccountId")
     @Expose
     private Integer accountId;
@@ -73,28 +69,6 @@ public class Adult {
     @SerializedName("PrimaryAddress")
     @Expose
     private Object primaryAddress;
-    @SerializedName("Account")
-    @Expose
-    private Object account;
-
-    /**
-     * 
-     * @return
-     *     The id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * 
-     * @param id
-     *     The Id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     /**
      * 
      * @return
@@ -454,23 +428,4 @@ public class Adult {
     public void setPrimaryAddress(Object primaryAddress) {
         this.primaryAddress = primaryAddress;
     }
-
-    /**
-     * 
-     * @return
-     *     The account
-     */
-    public Object getAccount() {
-        return account;
-    }
-
-    /**
-     * 
-     * @param account
-     *     The Account
-     */
-    public void setAccount(Object account) {
-        this.account = account;
-    }
-
 }
