@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by rmuhamed on domingo.
  */
 public final class RetrofitConfiguration {
-    public static final String BASE_URL = "http://iscoresports.com/bcl/challenge/";
+    public static final String BASE_URL = "http://iscoresports.com/bcl/challenge";
 
     private static Retrofit instance;
 

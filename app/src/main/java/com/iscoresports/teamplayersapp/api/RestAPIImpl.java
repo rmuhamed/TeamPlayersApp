@@ -1,7 +1,12 @@
 package com.iscoresports.teamplayersapp.api;
 
+import android.util.Log;
+
 import com.iscoresports.teamplayersapp.model.ModelObject;
+import com.iscoresports.teamplayersapp.model.Team;
 import com.iscoresports.teamplayersapp.util.Constants;
+
+import java.io.IOException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -11,33 +16,20 @@ import retrofit2.Response;
 /**
  * Created by rmuhamed on domingo.
  */
-public class RestAPIImpl<T extends ModelObject> {
-    private final APIResultListener listener;
+public class RestAPIImpl {
+    private static final String LOG_TAG = RestAPIImpl.class.getSimpleName();
 
-    public RestAPIImpl(APIResultListener<T> listener) {
-        this.listener = listener;
-    }
-
-    public void getTeam() {
+    public Team getTeam() {
+        Team team = null;
         IRestAPI restAPI =
                 RetrofitConfiguration.getInstance().create(IRestAPI.class);
 
-        Call<T> call = restAPI.getTeam();
-        call.enqueue(new Callback<T>() {
-            @Override
-            public void onResponse(Call<T> call, Response<T> response) {
-                int statusCode = response.code();
-                if (statusCode == Constants.HTTP_OK) {
-                    RestAPIImpl.this.listener.onSuccess((ModelObject) response.body());
-                } else {
-                    RestAPIImpl.this.listener.onError();
-                }
-            }
+        try {
+            team = restAPI.getTeam().execute().body();
+        } catch (IOException e) {
+            Log.e(LOG_TAG, e.toString());
+        }
 
-            @Override
-            public void onFailure(Call<T> call, Throwable t) {
-                RestAPIImpl.this.listener.onError();
-            }
-        });
+        return team;
     }
 }

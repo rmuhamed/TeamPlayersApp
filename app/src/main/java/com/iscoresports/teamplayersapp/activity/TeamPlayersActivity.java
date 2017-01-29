@@ -10,12 +10,9 @@ import android.widget.Toast;
 import com.iscoresports.teamplayersapp.R;
 import com.iscoresports.teamplayersapp.adapter.OnPlayerSelected;
 import com.iscoresports.teamplayersapp.adapter.TeamPlayerAdapter;
-import com.iscoresports.teamplayersapp.api.APIResultListener;
 import com.iscoresports.teamplayersapp.api.RestAPIImpl;
 import com.iscoresports.teamplayersapp.model.Player;
 import com.iscoresports.teamplayersapp.model.Team;
-
-import java.util.ArrayList;
 
 
 public class TeamPlayersActivity extends MyAppBaseActivity implements OnPlayerSelected {
@@ -47,27 +44,11 @@ public class TeamPlayersActivity extends MyAppBaseActivity implements OnPlayerSe
     }
 
     private void fetchData() {
-        RestAPIImpl restImpl = new RestAPIImpl(new APIResultListener<Team>() {
-            @Override
-            public void onSuccess(Team result) {
-                Toast.makeText(TeamPlayersActivity.this, result.getName(), Toast.LENGTH_SHORT).show();
 
-                ((TeamPlayerAdapter)recyclerView.getAdapter()).setItems(result.getPlayers());
-            }
-
-            @Override
-            public void onError() {
-                Toast.makeText(TeamPlayersActivity.this, "SOME ERROR", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        restImpl.getTeam();
     }
 
     @Override
     public void onSomePlayerClicked(Player aPlayer) {
-        RestAPIImpl restImpl = new RestAPIImpl(null);
 
-        //restImpl.getPlayerInformation(1 , aPlayer.getId(), aPlayer.getPerson().getFirstName(), aPlayer.getPerson().getLastName());
     }
 }
