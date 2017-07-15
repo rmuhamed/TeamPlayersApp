@@ -1,19 +1,16 @@
-package com.iscoresports.teamplayersapp.activity;
+package com.iscoresports.teamplayersapp.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
 import com.iscoresports.teamplayersapp.R;
 import com.iscoresports.teamplayersapp.adapter.OnPlayerSelected;
 import com.iscoresports.teamplayersapp.adapter.TeamPlayerAdapter;
-import com.iscoresports.teamplayersapp.api.RestAPIImpl;
 import com.iscoresports.teamplayersapp.controller.TeamController;
 import com.iscoresports.teamplayersapp.model.Player;
-import com.iscoresports.teamplayersapp.model.Team;
 
 
 public class TeamPlayersActivity extends MyAppBaseActivity implements OnPlayerSelected {
@@ -23,8 +20,8 @@ public class TeamPlayersActivity extends MyAppBaseActivity implements OnPlayerSe
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        this.fetchData();
+        //Inject this
+        new TeamPlayersViewModel().fetchData();
     }
 
     @Override
@@ -42,11 +39,6 @@ public class TeamPlayersActivity extends MyAppBaseActivity implements OnPlayerSe
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_team_players;
-    }
-
-    private void fetchData() {
-        TeamController controller = new TeamController();
-        //this.recyclerView.getAdapter().g(controller.get();
     }
 
     @Override

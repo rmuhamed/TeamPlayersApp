@@ -1,4 +1,4 @@
-package com.iscoresports.teamplayersapp.activity;
+package com.iscoresports.teamplayersapp.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
