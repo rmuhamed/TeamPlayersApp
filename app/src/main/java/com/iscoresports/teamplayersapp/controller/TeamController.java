@@ -1,5 +1,6 @@
 package com.iscoresports.teamplayersapp.controller;
 
+import com.iscoresports.teamplayersapp.api.RestAPIImpl;
 import com.iscoresports.teamplayersapp.model.Team;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class TeamController implements AbstractController<Team> {
 
     @Override
     public Team get() {
-        return null;
+        RestAPIImpl restAPI = new RestAPIImpl();
+        return restAPI.getTeam();
     }
 }

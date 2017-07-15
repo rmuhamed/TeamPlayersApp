@@ -11,6 +11,7 @@ import com.iscoresports.teamplayersapp.R;
 import com.iscoresports.teamplayersapp.adapter.OnPlayerSelected;
 import com.iscoresports.teamplayersapp.adapter.TeamPlayerAdapter;
 import com.iscoresports.teamplayersapp.api.RestAPIImpl;
+import com.iscoresports.teamplayersapp.controller.TeamController;
 import com.iscoresports.teamplayersapp.model.Player;
 import com.iscoresports.teamplayersapp.model.Team;
 
@@ -44,7 +45,8 @@ public class TeamPlayersActivity extends MyAppBaseActivity implements OnPlayerSe
     }
 
     private void fetchData() {
-
+        TeamController controller = new TeamController();
+        //this.recyclerView.getAdapter().g(controller.get();
     }
 
     @Override
